@@ -31,8 +31,8 @@ def main(args):
     test_data, test_labels = get_features_and_labels(args.test_data_file_path,
                                                      args.target)
 
-    train_dataset = ResonaDataset(train_data, train_labels, gbdt_model)
-    test_dataset = ResonaDataset(test_data, test_labels, gbdt_model)
+    train_dataset = MyDataset(train_data, train_labels, gbdt_model)
+    test_dataset = MyDataset(test_data, test_labels, gbdt_model)
     train_loader = loader(train_dataset, args.batch_size)
     test_loader = loader(test_dataset, 1, shuffle=False)
 
